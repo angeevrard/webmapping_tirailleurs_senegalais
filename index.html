@@ -114,14 +114,23 @@ map.on('load', function ()  {
             data: './france.geojson'
         });
         map.addLayer({
-            'id': 'GID_0',
+            'id': 'ma-couche-polygone-france',
             'type': 'fill',
             'source': 'france',
             'paint': {
-            'fill-opacity': 0.6,
             'fill-outline-color': '#000000' // Couleur de la bordure du polygone
             }
         });
+    });
+
+    map.addLayer({
+        'id': 'ma-couche-polygone-contour-france',
+        'type': 'line',
+        'source': 'france',
+        'paint': {
+            'line-color': '#000000', // Couleur de la ligne (gris foncé)
+            'line-width': 2           // Épaisseur de la ligne
+        }
     });
 
     function toggleSidebar(id) {
@@ -162,6 +171,7 @@ map.on('load', function ()  {
 </body>
 
 </html>
+
 
 
 
