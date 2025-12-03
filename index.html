@@ -109,10 +109,9 @@
     });
 
 map.on('load', function ()  {
-        const urlGeoJSON = './france.geojson'
         map.addSource('france', {
             type: 'geojson',
-            data: urlGeoJSON
+            data: './france.geojson'
         });
         map.addLayer({
             'id': 'GID_0',
@@ -164,5 +163,6 @@ map.on('load', function ()  {
 </body>
 
 </html>
+
 
 
