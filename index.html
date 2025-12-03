@@ -116,18 +116,14 @@ map.on('load', function ()  {
         map.addLayer({
             'id': 'ma-couche-polygone-france',
             'type': 'fill'
+            'paint': {
+            'fill-color': '#0080ff',
+            'fill-opacity': 0.1    ,
+            'fill-outline-color': '#000000' // Couleur de la bordure du remplissage (moins contrôlable que la couche 'line')
+        }
         });
     });
 
-    map.addLayer({
-        'id': 'ma-couche-polygone-contour-france',
-        'type': 'line',
-        'source': 'france',
-        'paint': {
-            'line-color': '#000000', // Couleur de la ligne (gris foncé)
-            'line-width': 2           // Épaisseur de la ligne
-        }
-    });
 
     function toggleSidebar(id) {
         const elem = document.getElementById(id);
@@ -167,6 +163,7 @@ map.on('load', function ()  {
 </body>
 
 </html>
+
 
 
 
