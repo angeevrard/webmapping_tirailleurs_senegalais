@@ -52,7 +52,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        color : white
+        color : white;
     }
 
     .sidebar-toggle.right {
@@ -99,7 +99,6 @@
     RIHD
 </div>
 
-</div>
 <script>
     const map = new maplibregl.Map({
         container: 'map',
@@ -116,6 +115,7 @@ map.on('load', function ()  {
         map.addLayer({
             'id': 'ma-couche-polygone-france',
             'type': 'fill',
+            'source' : 'france',
             'paint': {
             'fill-color': '#0080ff',
             'fill-opacity': 0.1    ,
@@ -127,6 +127,7 @@ map.on('load', function ()  {
 
     function toggleSidebar(id) {
         const elem = document.getElementById(id);
+        if (!elem) return; // 
         const classes = elem.className.split(' ');
         const collapsed = classes.indexOf('collapsed') !== -1;
 
@@ -156,13 +157,11 @@ map.on('load', function ()  {
         elem.className = classes.join(' ');
     }
 
-    map.on('load', () => {
-        toggleSidebar('left');
-    });
 </script>
 </body>
 
 </html>
+
 
 
 
